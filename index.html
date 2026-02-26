@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transport Demo</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; font-family: Inter, Arial, sans-serif; }
+      #app { position: fixed; inset: 0; }
+      #hud {
+        position: fixed; top: 12px; left: 12px; z-index: 10;
+        background: rgba(0,0,0,0.65); color: #fff; padding: 10px; border-radius: 8px;
+        min-width: 260px; backdrop-filter: blur(4px);
+      }
+      #hud h1 { margin: 0 0 8px; font-size: 14px; }
+      #hud .row { display: flex; gap: 8px; margin-bottom: 6px; align-items: center; }
+      #hud button {
+        border: 0; border-radius: 6px; padding: 6px 8px; cursor: pointer;
+        background: #2d6cdf; color: #fff; font-size: 12px;
+      }
+      #hud button.alt { background: #5f6a77; }
+      #hud button.active { background: #2bb673; }
+      #log { font-size: 12px; color: #d5dde8; min-height: 16px; }
+      #legend { font-size: 11px; color: #b8c4d4; line-height: 1.4; margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="hud">
+      <h1>Road Transport Demo</h1>
+      <div class="row">
+        <button id="roadBtn" class="active">Build Road</button>
+        <button id="stationBtn" class="alt">Place Station</button>
+        <button id="vehicleBtn" class="alt">Buy Vehicle ($500)</button>
+      </div>
+      <div class="row">
+        <strong id="cash"></strong>
+        <span id="stats"></span>
+      </div>
+      <div id="log"></div>
+      <div id="legend">
+        LMB: build/place/select · RMB drag: pan · Wheel: zoom<br />
+        Vehicle route: click Buy Vehicle, then click two stations.
+      </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
